@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>전체 일반의약품 리스트</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>이름</B></td>
+            <td><B>제조사</B></td>
+            <td><B>효과</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for medicine in medilist %}
+        <tr>
+            <td>{{medicine.name}}</td>
+            <td>{{medicine.maker}}</td>
+            <td>{{medicine.information}}</td>
+        </tr>
+        {% endfor %}
+        <tbody>
+    </table>
+</body>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 	<title>medihelper</title>
+ 	<meta charset="utf-8">
+ 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ 	<link rel="stylesheet" href="{% static 'medihelper/style.css' %}">
+</head>
+<body>
+	<div style="text-align: center; color:#727272; padding: 30px 0px 0px 0px; font-size:50px; font-weight:bold;">
+		<h1>MEDI HELPER</h1>
+		<a href="/list" target="_blank"><img src="http://www.goeonair.com/data/photos/20180522/art_15276930438804_9a928b.png" border = 0 width="400" height="400"></a>
+	</div>
+
+	<div class = 'center'>
+ 		<form autocomplete="on" action="{% url 'result' %}" method="get">
+ 			<span class='green_window'>
+  				<input class='input_text' type="text" name="q" value="{{ q }}" placeholder="어디가 아프신가요?" />
+  			</span>
+ 			<button class='sch_smit' type="submit" value="검색">검색</button>
+		</form>
+	</div>
+	
+
+	<p style="text-align: center; color:#727272; font-size:13px; font-weight:bold; padding-top: 70px">
+증상을 자세히 입력할수록 정확도가 올라갑니다!
+  </p>
+</body>

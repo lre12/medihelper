@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>증상별 의약품</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <p style="text-align: center; color:#000000; font-size:20px; font-weight:bold; padding-top: 20px">
+예상되는 당신의 증상입니다.
+  </p>
+
+  <a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)"> 
+    <div style="text-align: center; color:#727272; font-size:40px; font-weight:bold;">
+    <h1>1순위 : {{pre}} 의약품</h1>
+    </div>
+  </a><div style="DISPLAY: none">
+  <div style="text-align: center; color:#727272; font-size:20px; font-weight:bold;">
+     <a href ="https://terms.naver.com/search.nhn?query={{pre}}&searchType=&dicType=&subject=" target="_blank">
+  {{pre}}에 대해서 궁금하시다면?</a>
+  </div>
+  <div class="container">
+    <table class="table table-striped">
+
+        <thead>
+        <tr>
+            <td><B>이름</B></td>
+            <td><B>제조사</B></td>
+            <td><B>효과</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for medicine in first_medi %}
+        <tr>
+            <td width="150"><a href = "https://terms.naver.com/medicineSearch.nhn?mode=nameSearch&query={{medicine.name}}" target = "_blank">{{medicine.name}}</td></a>
+            <td width="150">{{medicine.maker}}</td>
+            <td>{{medicine.information}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  </div>
+  </div>
+
+  <a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)"> 
+    <div style="text-align: center; color:#727272; font-size:40px; font-weight:bold;">
+    <h1>2순위 : {{second}} 의약품</h1>
+    </div>
+  </a><div style="DISPLAY: none">
+  <div style="text-align: center; color:#727272; font-size:20px; font-weight:bold;">
+     <a href ="https://terms.naver.com/search.nhn?query={{second}}&searchType=&dicType=&subject=" target="_blank">
+  {{second}}에 대해서 궁금하시다면?</a>
+  </div>
+  <div class="container">
+    <table class="table table-striped">
+
+        <thead>
+        <tr>
+            <td><B>이름</B></td>
+            <td><B>제조사</B></td>
+            <td><B>효과</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for medicine in second_medi %}
+        <tr>
+            <td width="150"><a href = "https://terms.naver.com/medicineSearch.nhn?mode=nameSearch&query={{medicine.name}}" target = "_blank">{{medicine.name}}</td></a>
+            <td width="150">{{medicine.maker}}</td>
+            <td>{{medicine.information}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  </div>
+  </div>
+
+  <a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)"> 
+    <div style="text-align: center; color:#727272; font-size:40px; font-weight:bold;">
+    <h1>3순위 : {{third}} 의약품</h1>
+    </div>
+  </a><div style="DISPLAY: none">
+  <div style="text-align: center; color:#727272; font-size:20px; font-weight:bold;">
+     <a href ="https://terms.naver.com/search.nhn?query={{third}}&searchType=&dicType=&subject=" target="_blank">
+  {{third}}에 대해서 궁금하시다면?</a>
+  </div>
+  <div class="container">
+    <table class="table table-striped">
+
+        <thead>
+        <tr>
+            <td><B>이름</B></td>
+            <td><B>제조사</B></td>
+            <td><B>효과</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for medicine in third_medi %}
+        <tr>
+            <td width="150"><a href = "https://terms.naver.com/medicineSearch.nhn?mode=nameSearch&query={{medicine.name}}" target = "_blank">{{medicine.name}}</td></a>
+            <td width="150">{{medicine.maker}}</td>
+            <td>{{medicine.information}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  </div>
+  </div>
+  <p style="text-align: center; color:#727272; font-size:20px; font-weight:bold;">증상을 클릭해주세요!</p>
+
+</body>
